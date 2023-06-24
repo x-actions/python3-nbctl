@@ -11,7 +11,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-"""convert jupyter *.ipynb file to hugo markdown"""
+"""convert jupyter *.ipynb file to markdown"""
 
 import argparse
 import os
@@ -26,7 +26,7 @@ from nbctl import constants
 from nbctl import logger
 
 
-parser = argparse.ArgumentParser(description='convert jupyter *.ipynb file to hugo markdown')
+parser = argparse.ArgumentParser(description='convert jupyter *.ipynb file to markdown')
 parser.add_argument('--debug', '-d', help='show debug info, default is INFO',
                     action="store_true")
 parser.add_argument('--input', '-i', help='input *.ipynb file or dir', 

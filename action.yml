@@ -1,10 +1,14 @@
 name: 'nbctl'
-description: 'convert jupyter *.ipynb file to hugo markdown'
+description: 'convert jupyter *.ipynb file to markdown'
 author: 'xiexianbin <me@xiexianbin>'
 inputs:
-  LOG_LEVEL:
+  log-level:
     description: 'logger level, value [DEBUG|INFO|WARN|ERROR|FATAL]'
     default: 'DEBUG'
+  script:
+    description: 'script to run'
+    default: 'find . -type f -name "*.ipynb" | xargs -I{} nbctl --input {} -f'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
