@@ -24,7 +24,7 @@ RUN apt update && \
     cd ~ && \
     git clone https://github.com/x-actions/python3-nbctl.git && \
     cd python3-nbctl && \
-    git checkout dev && \
+    git checkout v1 && \
     pip3 install -r requirements.txt && \
     python3 setup.py --version && \
     python3 setup.py install
