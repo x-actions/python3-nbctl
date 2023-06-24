@@ -20,6 +20,7 @@ ENV LANGUAGE en_US.UTF-8
 
 # apt install -y docker-ce docker-ce-cli containerd.io; systemctl start docker
 RUN apt update && \
+    apt install -y git python3 python3-pip && \
     cd ~ && \
     git clone https://github.com/x-actions/python3-nbctl.git && \
     cd python3-nbctl && \
