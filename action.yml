@@ -2,7 +2,7 @@ name: 'nbctl'
 description: 'convert jupyter *.ipynb file to markdown'
 author: 'xiexianbin <me@xiexianbin>'
 inputs:
-  log-level:
+  log:
     description: 'logger level, value [DEBUG|INFO|WARN|ERROR|FATAL]'
     default: 'DEBUG'
   script:
