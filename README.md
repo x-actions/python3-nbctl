@@ -12,8 +12,8 @@ Github Actions for [Container ipynb to markdown](https://github.com/marketplace/
       - name: convert jupyter *.ipynb file to markdown
         uses: x-actions/python3-nbctl@v1
         with:
-          script: |
-            find <path> -type f -name "*.ipynb" | grep -v ".ipynb_checkpoints" | xargs -I{} nbctl --input {} -f
+          script: >
+            find <path> -type f -name "*.ipynb" | grep -v ".ipynb_checkpoints" | xargs -I{} nbctl --input {} --force --debug
 ```
 
 ## Dev and Test
