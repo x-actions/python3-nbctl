@@ -113,7 +113,7 @@ class nbctl(object):
         # check param
         if os.path.exists(self.input):
             if os.path.isdir(self.input):
-                for (dirpath, dirnames, filenames) in os.walk():
+                for (dirpath, dirnames, filenames) in os.walk(self.input):
                     self.logger.debug(f'dirpath: {dirpath}, dirnames: {dirnames}, filenames: {filenames}')
             else:
                 self.render_one(ipynb_path=self.input, markdown_dir=self.output)
