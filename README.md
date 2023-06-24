@@ -27,7 +27,10 @@ python3 setup.py install
 
 # or
 pip3 install python3-nbctl
+```
 
-# run
-nbctl
+- help
+
+```
+nbctl --help
 ```
