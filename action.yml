@@ -1,5 +1,5 @@
 name: 'convert ipynb to hugo markdown'
-description: 'nbcli'
+description: 'nbctl'
 author: 'xiexianbin <me@xiexianbin>'
 inputs:
   LOG_LEVEL:

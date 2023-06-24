@@ -1,4 +1,4 @@
-# Copyright 2023 xiexianbin.cn
+# Copyright 2022 xiexianbin.cn
 # All Rights Reserved.
 #
 #   Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -11,8 +11,16 @@
 #   License for the specific language governing permissions and limitations
 #   under the License.
 
-import os
+import pbr.version
 
 
-CURRENT_PATH = os.getcwd()
-LOG_LEVEL = os.environ.get('LOG_LEVEL', 'DEBUG')
+__all__ = ['__version__']
+
+
+version_info = pbr.version.VersionInfo('python3-nbctl')
+# We have a circular import problem when we first run python setup.py sdist
+# It's harmless, so deflect it.
+try:
+    __version__ = version_info.version_string()
+except AttributeError:
+    __version__ = None
