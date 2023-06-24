@@ -162,3 +162,4 @@ cython_debug/
 # self define
 .DS_Store
 .history
+.vscode

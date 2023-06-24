@@ -19,31 +19,31 @@ import sys
 from nbctl import constants
 
 
-def gen_logger():
+def gen_logger(level=constants.LOG_LEVEL):
     # create logger
-    if constants.LOG_LEVEL == 'DEBUG':
+    if level == 'DEBUG':
         log_level = logging.DEBUG
-    elif constants.LOG_LEVEL == 'INFO':
+    elif level == 'INFO':
         log_level = logging.INFO
-    elif constants.LOG_LEVEL == 'WARN':
+    elif level == 'WARN':
         log_level = logging.WARN
-    elif constants.LOG_LEVEL == 'ERROR':
+    elif level == 'ERROR':
         log_level = logging.ERROR
-    elif constants.LOG_LEVEL == 'FATAL':
+    elif level == 'FATAL':
         log_level = logging.FATAL
     else:
         log_level = logging.DEBUG
     formatter = logging.Formatter(
-        fmt="%(asctime)-15s %(process)d %(levelname)s %(message)s - %(filename)s %(lineno)d",
+        fmt="%(asctime)-15s %(process)d - %(filename)s:%(lineno)d %(levelname)s %(message)s",
         datefmt="%a %d %b %Y %H:%M:%S")
 
-    _logger = logging.getLogger(name="cis")
+    _logger = logging.getLogger(name="nbctl")
     _logger.setLevel(log_level)
 
-    fh = logging.FileHandler(filename="cis.log")
-    fh.setLevel(log_level)
-    fh.setFormatter(formatter)
-    _logger.addHandler(fh)
+    # fh = logging.FileHandler(filename="nbctl.log")
+    # fh.setLevel(log_level)
+    # fh.setFormatter(formatter)
+    # _logger.addHandler(fh)
 
     oh = logging.StreamHandler(sys.stdout)
     oh.setLevel(log_level)
@@ -52,4 +52,4 @@ def gen_logger():
     return _logger
 
 
-logger = gen_logger()
+logger = gen_logger(constants.DEFAULT_LOG_LEVEL)

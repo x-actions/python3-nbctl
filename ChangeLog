@@ -1,8 +1,5 @@
 CHANGES
 =======
 
-v0.1.0
-------
-
-* feautre: base func, convert ipynb to hugo markdown files
-* init commit
+* init
+* Initial commit
